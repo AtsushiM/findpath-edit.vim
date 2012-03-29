@@ -32,7 +32,7 @@ function! fpedit#Edit(...)
                 if g:findpath_UseUnite == 0
                     exec 'e '.target
                 else
-                    exec 'Unite -input='.target.'/ file'
+                    exec 'Unite -input='.target.' file'
                 endif
 
                 break
