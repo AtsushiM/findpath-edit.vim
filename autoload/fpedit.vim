@@ -23,7 +23,7 @@ function! fpedit#Edit(...)
 
         for e in path
             if e != ''
-                let target = root.'/'.e
+                let target = root.e.'/'
             else
                 let target = root
             endif
