@@ -3,6 +3,9 @@
 "VERSION:  0.9
 "LICENSE:  MIT
 
+let s:save_cpo = &cpo
+set cpo&vim
+
 function! fpedit#Edit(...)
     let root = g:FPRoot()
 
@@ -72,3 +75,5 @@ function! fpedit#CD(...)
         return 1
     endif
 endfunction
+
+let &cpo = s:save_cpo

@@ -3,6 +3,14 @@
 "VERSION:  0.9
 "LICENSE:  MIT
 
+if exists("g:loaded_findpath_edit")
+    finish
+endif
+let g:loaded_findpath_edit = 1
+
+let s:save_cpo = &cpo
+set cpo&vim
+
 if !exists("g:findpath_edit_DefaultJSDir")
     let g:findpath_edit_DefaultJSDir = ['js', 'javascript', 'javascripts']
 endif
@@ -32,3 +40,5 @@ endif
 if g:findpath_edit_autocdroot == 1
     au BufReadPost * exec fpedit#CD() 
 endif
+
+let &cpo = s:save_cpo
